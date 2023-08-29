@@ -6,8 +6,6 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.UUID;
-
 @Service
 @RequiredArgsConstructor
 public class OrderManagement {
@@ -16,7 +14,7 @@ public class OrderManagement {
     private final ApplicationEventPublisher events;
 
     @Transactional
-    public void complete() {
-        events.publishEvent(new OrderCompleted(UUID.randomUUID()));
+    public void complete(Order order) {
+        events.publishEvent(new OrderCompleted(order.getId()));
     }
 }
