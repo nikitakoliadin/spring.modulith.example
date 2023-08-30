@@ -10,7 +10,7 @@ import org.springframework.modulith.test.Scenario;
 @RequiredArgsConstructor
 public class OrderIntegrationTests {
 
-    OrderManagement orders;
+    private final OrderManagement orders;
 
     @Test
     void publishesOrderCompletion(Scenario scenario) {
