@@ -16,8 +16,11 @@ public class OrderManagement {
     private final ApplicationEventPublisher events;
 
     @Transactional
-    public void complete(Order order) {
-        log.info("New order to complete: {}", order);
+    public void complete(Order order) throws InterruptedException {
+        log.info("New order: {}", order);
+
+        // Simulate busy work
+        Thread.sleep(3000);
 
         OrderCompleted orderCompleted = new OrderCompleted(order.getId());
         events.publishEvent(orderCompleted);
