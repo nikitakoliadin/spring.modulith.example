@@ -14,7 +14,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @ConfigurationPropertiesScan
 public class Application {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         var configurableApplicationContext = SpringApplication.run(Application.class, args);
 
         log.info("Simulation started");

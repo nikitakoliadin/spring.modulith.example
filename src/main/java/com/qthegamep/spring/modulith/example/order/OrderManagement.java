@@ -2,6 +2,7 @@ package com.qthegamep.spring.modulith.example.order;
 
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
@@ -15,8 +16,9 @@ public class OrderManagement {
     @NonNull
     private final ApplicationEventPublisher events;
 
+    @SneakyThrows
     @Transactional
-    public void complete(Order order) throws InterruptedException {
+    public void complete(Order order) {
         log.info("New order: {}", order);
 
         // Simulate busy work

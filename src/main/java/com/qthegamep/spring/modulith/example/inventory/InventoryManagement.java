@@ -3,6 +3,7 @@ package com.qthegamep.spring.modulith.example.inventory;
 import com.qthegamep.spring.modulith.example.order.OrderCompleted;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.modulith.ApplicationModuleListener;
@@ -16,8 +17,9 @@ public class InventoryManagement {
     @NonNull
     private final ApplicationEventPublisher events;
 
+    @SneakyThrows
     @ApplicationModuleListener
-    void on(OrderCompleted orderCompleted) throws InterruptedException {
+    void on(OrderCompleted orderCompleted) {
         log.info("Received async event new order for completion: {}", orderCompleted);
 
         // Simulate busy work
