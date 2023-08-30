@@ -22,7 +22,7 @@ public class OrderManagement {
         // Simulate busy work
         Thread.sleep(3000);
 
-        OrderCompleted orderCompleted = new OrderCompleted(order.getId());
+        var orderCompleted = new OrderCompleted(order.getId());
         events.publishEvent(orderCompleted);
 
         log.info("Order completed: {}", orderCompleted);

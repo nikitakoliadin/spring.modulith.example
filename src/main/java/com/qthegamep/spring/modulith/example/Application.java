@@ -6,7 +6,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 @Slf4j
@@ -16,7 +15,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 public class Application {
 
     public static void main(String[] args) throws InterruptedException {
-        ConfigurableApplicationContext configurableApplicationContext = SpringApplication.run(Application.class, args);
+        var configurableApplicationContext = SpringApplication.run(Application.class, args);
 
         log.info("Simulation started");
 
