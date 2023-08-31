@@ -9,3 +9,4 @@ For further reference, please consider the following sections:
 * [Create an OCI image](https://docs.spring.io/spring-boot/docs/3.1.3/maven-plugin/reference/html/#build-image)
 * [jMolecules – Architectural abstractions for Java](https://github.com/xmolecules/jmolecules)
 * [Spring Modulith](https://docs.spring.io/spring-modulith/docs/current/reference/html/)
+* [Spring Modulith Examples](https://github.com/spring-projects/spring-modulith/tree/main/spring-modulith-examples)
